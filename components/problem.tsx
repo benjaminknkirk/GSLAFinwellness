@@ -23,7 +23,7 @@ const supporting: SupportingStat[] = [
   },
   {
     display: "1 in 10",
-    label: "Los Angeles adults is carrying medical debt that follows them home.",
+    label: "Los Angeles adults carry medical debt that follows them home.",
     source: "Undue Medical Debt / LA County",
   },
   {
