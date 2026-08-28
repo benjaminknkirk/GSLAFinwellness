@@ -6,17 +6,19 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
-  axes: ["SOFT", "WONK", "opsz"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gsla-finwellness.vercel.app"),
+  metadataBase: new URL("https://www.gslafinancialwellness.com"),
   title: {
     default: "GSLA Financial Wellness Initiative",
     template: "%s · Global Shapers LA",
