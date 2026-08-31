@@ -1,10 +1,12 @@
 import { FadeIn } from "./fade-in";
+import { Logo } from "./logo";
 
 export function About() {
   return (
     <section id="about" className="bg-cream px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto grid max-w-page gap-12 lg:grid-cols-12">
         <FadeIn className="lg:col-span-5">
+          <Logo className="mb-6 h-20 w-20 shadow-card" />
           <p className="text-[0.78rem] font-semibold uppercase tracking-[0.2em] text-gold-muted">
             The hub
           </p>

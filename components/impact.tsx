@@ -32,7 +32,7 @@ export function Impact() {
             How a gift lands
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-display-lg font-semibold text-navy text-balance">
-            Your dollar buys a seat, an hour, a room—not a gala table.
+            Your dollar buys a seat, an hour, a room, not a gala table.
           </h2>
           <p className="mt-6 max-w-2xl text-lead text-ink-muted text-pretty">
             We are raising{" "}

@@ -30,7 +30,7 @@ const supporting: SupportingStat[] = [
     value: 37,
     suffix: "%",
     label: "of P-Fin Index questions were answered correctly by Gen Z, on average.",
-    source: "TIAA Institute–GFLEC P-Fin Index",
+    source: "TIAA Institute-GFLEC P-Fin Index",
   },
 ];
 
@@ -56,7 +56,7 @@ export function Problem() {
               The average American scores just{" "}
               <span className="font-semibold text-ink">48%</span> on a basic
               financial literacy test. That is not a personal failing. It is a
-              gap in access—to language, practice, and a first teacher who
+              gap in access: to language, practice, and a first teacher who
               thought you were worth teaching.
             </p>
             <p className="mt-4 text-sm text-ink-faint">
@@ -66,7 +66,7 @@ export function Problem() {
 
           <FadeIn delay={0.1} className="lg:col-span-5">
             <blockquote className="border-l-2 border-gold pl-5 font-display text-display-md italic text-forest">
-              A late fee, a medical bill, a choice made under pressure—the gap
+              A late fee, a medical bill, a choice made under pressure: the gap
               shows up in ordinary weeks, not just crises.
             </blockquote>
           </FadeIn>

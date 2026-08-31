@@ -1,11 +1,11 @@
-import { Mark } from "./mark";
+import { Logo } from "./logo";
 
 export function Footer() {
   return (
     <footer className="border-t border-navy/10 bg-cream-warm px-5 py-12 sm:px-8">
       <div className="mx-auto flex max-w-page flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex items-start gap-3">
-          <Mark className="h-10 w-10 text-navy" />
+          <Logo className="h-14 w-14 shadow-card" />
           <div>
             <p className="font-display text-lg font-semibold text-navy">
               GSLA Financial Wellness Initiative

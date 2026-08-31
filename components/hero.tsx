@@ -103,7 +103,7 @@ export function Hero() {
           className="mt-7 max-w-xl text-lead text-cream/78 text-pretty"
         >
           Workshops, coaching, and neighborhood programming so more Angelenos
-          can make money decisions with clarity—not fear.
+          can make money decisions with clarity, not fear.
         </motion.p>
 
         <motion.div

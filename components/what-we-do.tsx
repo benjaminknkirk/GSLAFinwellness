@@ -9,7 +9,7 @@ const pillars = [
   {
     number: "02",
     title: "Community programming, in the neighborhood",
-    body: "Pop-up clinics in libraries, rec centers, and partner spaces—not downtown hotel ballrooms. Materials in English and Spanish. Childcare when we can staff it.",
+    body: "Pop-up clinics in libraries, rec centers, and partner spaces, not downtown hotel ballrooms. Materials in English and Spanish. Childcare when we can staff it.",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ export function WhatWeDo() {
             What we&apos;re doing
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-display-lg font-semibold text-balance">
-            Practical money skills, taught like a neighbor—not a bank.
+            Practical money skills, taught like a neighbor, not a bank.
           </h2>
           <p className="mt-6 max-w-2xl text-lead text-cream/78 text-pretty">
             The GSLA Financial Wellness Initiative is the Summer 2026 cohort

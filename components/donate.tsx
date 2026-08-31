@@ -70,7 +70,7 @@ export function Donate() {
           </h2>
           <p className="mt-6 text-lead text-cream/76 text-pretty">
             This form records a pledge. A hub member will send a secure payment
-            link—no account required on this page. If you would rather give
+            link. No account required on this page. If you would rather give
             another way, write us at{" "}
             <a
               className="underline decoration-gold/60 underline-offset-4 hover:text-gold-bright"
@@ -214,7 +214,7 @@ export function Donate() {
               >
                 {status === "submitting"
                   ? "Sending pledge…"
-                  : `Pledge $${selected > 0 ? selected.toLocaleString("en-US") : "—"}`}
+                  : `Pledge $${selected > 0 ? selected.toLocaleString("en-US") : "-"}`}
               </button>
               <p className="mt-3 text-center text-xs leading-relaxed text-cream/50">
                 Global Shapers LA is a hub of the World Economic Forum Global

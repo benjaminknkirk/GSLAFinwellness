@@ -31,7 +31,7 @@ Copy cites:
 
 - Global Financial Literacy Excellence Center (48% average score)
 - Federal Reserve SHED ($400 emergency expense)
-- TIAA Institute–GFLEC P-Fin Index (Gen Z)
+- TIAA Institute-GFLEC P-Fin Index (Gen Z)
 - GSLA / Undue Medical Debt (Los Angeles medical debt and the hub’s $174,530 Shred the Debt result)
 
 Update goals, amounts, and contact email (`hello@globalshapers.la`) before launch.

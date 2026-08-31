@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Mark } from "./mark";
+import { Logo } from "./logo";
 
 const links = [
   { href: "#problem", label: "The problem" },
@@ -43,7 +43,7 @@ export function Nav() {
           className="flex items-center gap-3 text-cream"
           onClick={() => setOpen(false)}
         >
-          <Mark className="h-9 w-9 text-navy-mid" />
+          <Logo className="h-11 w-11" priority />
           <span className="leading-tight">
             <span className="block font-display text-[1.05rem] font-semibold tracking-tight">
               GSLA
