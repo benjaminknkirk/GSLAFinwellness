@@ -2,6 +2,8 @@
 
 A single-page fundraising site for **Global Shapers Los Angeles** (a World Economic Forum community hub). The Summer 2026 campaign funds workshops, peer coaching, and neighborhood programming so more Angelenos can make money decisions with confidence.
 
+Visual identity follows the WEF digital palette: primary blue `#0065F2`, cobalt `#0044A2` / `#003D91`, charcoal `#2C3240`, and accent yellow `#F7DB5E`.
+
 ## Stack
 
 - Next.js 14 (App Router)

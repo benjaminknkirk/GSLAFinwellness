@@ -34,7 +34,7 @@ export function About() {
             href="https://www.globalshapers.la"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-navy underline decoration-gold underline-offset-4 hover:text-forest"
+            className="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-brand-deep underline decoration-brand underline-offset-4 hover:text-brand"
           >
             Visit globalshapers.la
             <span aria-hidden>→</span>

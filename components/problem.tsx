@@ -65,7 +65,7 @@ export function Problem() {
           </FadeIn>
 
           <FadeIn delay={0.1} className="lg:col-span-5">
-            <blockquote className="border-l-2 border-gold pl-5 font-display text-display-md italic text-forest">
+            <blockquote className="border-l-2 border-brand pl-5 font-display text-display-md italic text-brand-deep">
               A late fee, a medical bill, a choice made under pressure: the gap
               shows up in ordinary weeks, not just crises.
             </blockquote>

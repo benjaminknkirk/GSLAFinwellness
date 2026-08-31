@@ -9,31 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // WEF-aligned palette sampled from weforum.org / Brandfetch
         navy: {
-          DEFAULT: "#0B1F33",
-          deep: "#07141F",
-          mid: "#16324C",
-          soft: "#1E4466",
+          DEFAULT: "#003D91",
+          deep: "#001F4D",
+          mid: "#0044A2",
+          soft: "#0051C2",
         },
         forest: {
-          DEFAULT: "#1B3A32",
-          mid: "#2A5648",
-          leaf: "#3C6B58",
+          DEFAULT: "#0044A2",
+          mid: "#0051C2",
+          leaf: "#0065F2",
+        },
+        brand: {
+          DEFAULT: "#0065F2",
+          dark: "#0051C2",
+          deep: "#003D91",
         },
         gold: {
-          DEFAULT: "#C9A227",
-          bright: "#E0B84A",
-          muted: "#A8841C",
+          DEFAULT: "#F7DB5E",
+          bright: "#FFE56A",
+          muted: "#C9B24A",
         },
         cream: {
-          DEFAULT: "#F6F1E7",
-          warm: "#EDE6D6",
-          deep: "#D9D0BC",
+          DEFAULT: "#F7F9FC",
+          warm: "#EEF2F8",
+          deep: "#D5DEEB",
         },
         ink: {
-          DEFAULT: "#1A1A16",
-          muted: "#5C5A54",
-          faint: "#8A877D",
+          DEFAULT: "#2C3240",
+          muted: "#5A6270",
+          faint: "#8A93A3",
         },
       },
       fontFamily: {
@@ -64,8 +70,9 @@ const config: Config = {
         prose: "40rem",
       },
       boxShadow: {
-        card: "0 18px 40px -24px rgba(11, 31, 51, 0.28)",
-        gold: "0 10px 30px -12px rgba(201, 162, 39, 0.55)",
+        card: "0 18px 40px -24px rgba(44, 50, 64, 0.28)",
+        gold: "0 10px 30px -12px rgba(247, 219, 94, 0.45)",
+        brand: "0 10px 30px -12px rgba(0, 101, 242, 0.55)",
       },
       keyframes: {
         "grain-shift": {

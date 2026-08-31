@@ -46,7 +46,7 @@ export function Impact() {
           {gifts.map((gift, index) => (
             <FadeIn key={gift.amount} delay={0.06 * index}>
               <article className="flex h-full flex-col rounded-3xl bg-cream p-7 shadow-card sm:p-8">
-                <p className="font-display text-4xl font-semibold tracking-tight text-gold-muted">
+                <p className="font-display text-4xl font-semibold tracking-tight text-brand">
                   {gift.amount}
                 </p>
                 <h3 className="mt-4 font-display text-2xl font-medium text-navy">

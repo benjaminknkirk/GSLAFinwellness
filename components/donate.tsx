@@ -73,7 +73,7 @@ export function Donate() {
             link. No account required on this page. If you would rather give
             another way, write us at{" "}
             <a
-              className="underline decoration-gold/60 underline-offset-4 hover:text-gold-bright"
+              className="underline decoration-brand/70 underline-offset-4 hover:text-brand"
               href="mailto:hello@globalshapers.la"
             >
               hello@globalshapers.la
@@ -126,8 +126,8 @@ export function Donate() {
                         }}
                         className={`h-12 rounded-full text-[0.95rem] font-semibold transition ${
                           active
-                            ? "bg-gold text-navy-deep"
-                            : "border border-cream/20 text-cream hover:border-gold"
+                            ? "bg-brand text-white"
+                            : "border border-cream/20 text-cream hover:border-brand"
                         }`}
                       >
                         ${value}
@@ -140,7 +140,7 @@ export function Donate() {
                   <div
                     className={`flex h-12 items-center rounded-full border px-4 ${
                       usingCustom
-                        ? "border-gold bg-navy-deep"
+                        ? "border-brand bg-navy-deep"
                         : "border-cream/20"
                     }`}
                   >
@@ -210,7 +210,7 @@ export function Donate() {
               <button
                 type="submit"
                 disabled={status === "submitting" || selected < 1}
-                className="mt-6 h-12 w-full rounded-full bg-gold text-[1rem] font-semibold text-navy-deep transition hover:bg-gold-bright disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-6 h-12 w-full rounded-full bg-brand text-[1rem] font-semibold text-white shadow-brand transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "submitting"
                   ? "Sending pledge…"

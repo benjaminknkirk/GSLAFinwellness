@@ -21,8 +21,8 @@ export default async function OpenGraphImage() {
           justifyContent: "space-between",
           padding: "64px 72px",
           background:
-            "linear-gradient(165deg, #07141F 0%, #0B1F33 50%, #1B3A32 100%)",
-          color: "#F6F1E7",
+            "linear-gradient(165deg, #001F4D 0%, #003D91 50%, #0044A2 100%)",
+          color: "#F7F9FC",
         }}
       >
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -41,7 +41,7 @@ export default async function OpenGraphImage() {
               fontSize: 22,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#E0B84A",
+              color: "#F7DB5E",
               marginBottom: 28,
             }}
           >

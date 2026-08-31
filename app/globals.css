@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #f6f1e7;
-  --foreground: #1a1a16;
-  --gold: #c9a227;
+  --background: #f7f9fc;
+  --foreground: #2c3240;
+  --brand: #0065f2;
+  --accent: #f7db5e;
 }
 
 html {
@@ -34,8 +35,8 @@ body {
 }
 
 ::selection {
-  background: #c9a227;
-  color: #0b1f33;
+  background: #0065f2;
+  color: #ffffff;
 }
 
 @layer utilities {

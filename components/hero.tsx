@@ -21,11 +21,11 @@ export function Hero() {
       id="top"
       className="relative isolate flex min-h-[100svh] overflow-hidden bg-navy-deep text-cream"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_-10%,rgba(201,162,39,0.22),transparent_55%),radial-gradient(70%_60%_at_5%_90%,rgba(42,86,72,0.55),transparent_50%),linear-gradient(165deg,#07141F_0%,#0B1F33_48%,#1B3A32_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_-10%,rgba(0,101,242,0.35),transparent_55%),radial-gradient(70%_60%_at_5%_90%,rgba(0,68,162,0.55),transparent_50%),linear-gradient(165deg,#001F4D_0%,#003D91_48%,#0044A2_100%)]" />
 
       <motion.div
         style={{ y: ySlow, opacity: fade }}
-        className="pointer-events-none absolute -left-24 top-16 h-[28rem] w-[28rem] rounded-full bg-forest-leaf/20 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-16 h-[28rem] w-[28rem] rounded-full bg-brand/25 blur-3xl"
         aria-hidden
       />
       <motion.div
@@ -47,29 +47,29 @@ export function Hero() {
           rx="280"
           ry="280"
           fill="none"
-          stroke="#C9A227"
-          strokeOpacity="0.18"
+          stroke="#0065F2"
+          strokeOpacity="0.28"
           strokeWidth="1.25"
         />
         <motion.path
           style={{ y: yFast }}
           d="M-40 640 C 220 520, 420 780, 720 640 S 1180 500, 1520 680"
           fill="none"
-          stroke="#EDE6D6"
-          strokeOpacity="0.12"
+          stroke="#EEF2F8"
+          strokeOpacity="0.14"
           strokeWidth="1.5"
         />
         <motion.path
           style={{ y: ySlow }}
           d="M-20 720 C 260 600, 480 840, 780 700 S 1240 560, 1560 740"
           fill="none"
-          stroke="#C9A227"
-          strokeOpacity="0.22"
+          stroke="#F7DB5E"
+          strokeOpacity="0.28"
           strokeWidth="1.5"
         />
-        <circle cx="210" cy="210" r="3.5" fill="#C9A227" fillOpacity="0.7" />
-        <circle cx="980" cy="620" r="2.5" fill="#F6F1E7" fillOpacity="0.45" />
-        <circle cx="1260" cy="340" r="5" fill="#C9A227" fillOpacity="0.35" />
+        <circle cx="210" cy="210" r="3.5" fill="#F7DB5E" fillOpacity="0.8" />
+        <circle cx="980" cy="620" r="2.5" fill="#F7F9FC" fillOpacity="0.45" />
+        <circle cx="1260" cy="340" r="5" fill="#0065F2" fillOpacity="0.45" />
       </svg>
 
       <div className="grain pointer-events-none absolute inset-0 opacity-[0.11] mix-blend-overlay" />
@@ -114,13 +114,13 @@ export function Hero() {
         >
           <a
             href="#donate"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-gold px-7 text-[1rem] font-semibold text-navy-deep shadow-gold transition-colors hover:bg-gold-bright"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-7 text-[1rem] font-semibold text-white shadow-brand transition-colors hover:bg-brand-dark"
           >
             Donate Now
           </a>
           <a
             href="#work"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-cream/25 px-7 text-[1rem] text-cream transition-colors hover:border-gold hover:text-gold-bright"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-cream/30 px-7 text-[1rem] text-cream transition-colors hover:border-gold hover:text-gold-bright"
           >
             See the work
           </a>

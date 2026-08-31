@@ -66,7 +66,7 @@ export function Nav() {
           ))}
           <a
             href="#donate"
-            className="rounded-full bg-gold px-5 py-2.5 text-[0.92rem] font-semibold text-navy-deep shadow-gold transition-colors hover:bg-gold-bright"
+            className="rounded-full bg-brand px-5 py-2.5 text-[0.92rem] font-semibold text-white shadow-brand transition-colors hover:bg-brand-dark"
           >
             Donate Now
           </a>
@@ -121,7 +121,7 @@ export function Nav() {
             ))}
             <a
               href="#donate"
-              className="mt-3 rounded-full bg-gold px-5 py-3 text-center font-semibold text-navy-deep"
+              className="mt-3 rounded-full bg-brand px-5 py-3 text-center font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Donate Now
