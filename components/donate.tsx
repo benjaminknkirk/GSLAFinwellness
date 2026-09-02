@@ -1,21 +1,15 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { VENMO_HANDLE, VENMO_URL } from "@/lib/donate";
 import { FadeIn } from "./fade-in";
 
 const presets = [25, 75, 150, 400];
-
-type Status = "idle" | "submitting" | "success" | "error";
 
 export function Donate() {
   const [amount, setAmount] = useState<number>(75);
   const [custom, setCustom] = useState("");
   const [usingCustom, setUsingCustom] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [note, setNote] = useState("");
-  const [status, setStatus] = useState<Status>("idle");
-  const [message, setMessage] = useState("");
 
   const selected = usingCustom ? Number(custom) || 0 : amount;
 
@@ -26,37 +20,6 @@ export function Donate() {
     if (selected >= 25) return "Funds a workshop kit for a participant.";
     return "Every dollar moves someone closer to a first session.";
   }, [selected]);
-
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("submitting");
-    setMessage("");
-
-    try {
-      const response = await fetch("/api/pledge", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          amount: selected,
-          note,
-        }),
-      });
-      const data = (await response.json()) as { error?: string };
-
-      if (!response.ok) {
-        setStatus("error");
-        setMessage(data.error ?? "We could not record that pledge. Try again.");
-        return;
-      }
-
-      setStatus("success");
-    } catch {
-      setStatus("error");
-      setMessage("The network blinked. Please try once more.");
-    }
-  }
 
   return (
     <section id="donate" className="bg-navy px-5 py-24 text-cream sm:px-8 sm:py-32">
@@ -69,14 +32,15 @@ export function Donate() {
             Put a workshop in someone&apos;s week.
           </h2>
           <p className="mt-6 text-lead text-cream/76 text-pretty">
-            This form records a pledge. A hub member will send a secure payment
-            link. No account required on this page. If you would rather give
-            another way, write us at{" "}
+            Give through Venmo to Global Shapers LA. Pick an amount below for a
+            sense of impact, then complete your gift at{" "}
             <a
-              className="underline decoration-brand/70 underline-offset-4 hover:text-brand"
-              href="mailto:hello@globalshapers.la"
+              className="font-semibold text-gold-bright underline decoration-brand/70 underline-offset-4 hover:text-brand"
+              href={VENMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              hello@globalshapers.la
+              {VENMO_HANDLE}
             </a>
             .
           </p>
@@ -86,143 +50,89 @@ export function Donate() {
         </FadeIn>
 
         <FadeIn delay={0.1} className="lg:col-span-7">
-          {status === "success" ? (
-            <div className="rounded-3xl bg-cream p-8 text-navy sm:p-10">
-              <p className="text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-gold-muted">
-                Pledge received
-              </p>
-              <h3 className="mt-3 font-display text-display-md font-semibold">
-                Thank you, {name.split(" ")[0] || "friend"}.
-              </h3>
-              <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-                We logged a pledge of{" "}
-                <span className="font-semibold text-navy">
-                  ${selected.toLocaleString("en-US")}
-                </span>
-                . Watch {email} for a secure payment link from Global Shapers
-                LA. If it does not arrive within two business days, reply to
-                that address and we will find you.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={onSubmit}
-              className="rounded-3xl bg-navy-mid/60 p-6 sm:p-8"
-            >
-              <fieldset>
-                <legend className="text-sm font-semibold text-cream">
-                  Choose an amount
-                </legend>
-                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  {presets.map((value) => {
-                    const active = !usingCustom && amount === value;
-                    return (
-                      <button
-                        key={value}
-                        type="button"
-                        onClick={() => {
-                          setAmount(value);
-                          setUsingCustom(false);
-                        }}
-                        className={`h-12 rounded-full text-[0.95rem] font-semibold transition ${
-                          active
-                            ? "bg-brand text-white"
-                            : "border border-cream/20 text-cream hover:border-brand"
-                        }`}
-                      >
-                        ${value}
-                      </button>
-                    );
-                  })}
-                </div>
-                <label className="mt-4 block">
-                  <span className="sr-only">Custom amount</span>
-                  <div
-                    className={`flex h-12 items-center rounded-full border px-4 ${
-                      usingCustom
-                        ? "border-brand bg-navy-deep"
-                        : "border-cream/20"
-                    }`}
-                  >
-                    <span className="text-gold-bright">$</span>
-                    <input
-                      inputMode="decimal"
-                      type="number"
-                      min={1}
-                      step="1"
-                      placeholder="Custom amount"
-                      value={custom}
-                      onChange={(event) => {
-                        setCustom(event.target.value);
-                        setUsingCustom(true);
+          <div className="rounded-3xl bg-navy-mid/60 p-6 sm:p-8">
+            <fieldset>
+              <legend className="text-sm font-semibold text-cream">
+                Suggested amounts
+              </legend>
+              <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {presets.map((value) => {
+                  const active = !usingCustom && amount === value;
+                  return (
+                    <button
+                      key={value}
+                      type="button"
+                      onClick={() => {
+                        setAmount(value);
+                        setUsingCustom(false);
                       }}
-                      onFocus={() => setUsingCustom(true)}
-                      className="ml-2 w-full bg-transparent text-cream outline-none placeholder:text-cream/40"
-                    />
-                  </div>
-                </label>
-              </fieldset>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <label className="block text-sm">
-                  <span className="text-cream/70">Name</span>
-                  <input
-                    required
-                    name="name"
-                    autoComplete="name"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    className="mt-2 h-12 w-full rounded-2xl border border-cream/15 bg-navy-deep px-4 text-cream outline-none ring-gold/40 focus:ring-2"
-                  />
-                </label>
-                <label className="block text-sm">
-                  <span className="text-cream/70">Email</span>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    autoComplete="email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    className="mt-2 h-12 w-full rounded-2xl border border-cream/15 bg-navy-deep px-4 text-cream outline-none ring-gold/40 focus:ring-2"
-                  />
-                </label>
+                      className={`h-12 rounded-full text-[0.95rem] font-semibold transition ${
+                        active
+                          ? "bg-brand text-white"
+                          : "border border-cream/20 text-cream hover:border-brand"
+                      }`}
+                    >
+                      ${value}
+                    </button>
+                  );
+                })}
               </div>
-
-              <label className="mt-4 block text-sm">
-                <span className="text-cream/70">Note (optional)</span>
-                <textarea
-                  name="note"
-                  rows={3}
-                  value={note}
-                  onChange={(event) => setNote(event.target.value)}
-                  placeholder="In honor of someone, or a neighborhood you care about."
-                  className="mt-2 w-full resize-none rounded-2xl border border-cream/15 bg-navy-deep px-4 py-3 text-cream outline-none ring-gold/40 placeholder:text-cream/35 focus:ring-2"
-                />
+              <label className="mt-4 block">
+                <span className="sr-only">Custom amount</span>
+                <div
+                  className={`flex h-12 items-center rounded-full border px-4 ${
+                    usingCustom
+                      ? "border-brand bg-navy-deep"
+                      : "border-cream/20"
+                  }`}
+                >
+                  <span className="text-gold-bright">$</span>
+                  <input
+                    inputMode="decimal"
+                    type="number"
+                    min={1}
+                    step="1"
+                    placeholder="Custom amount"
+                    value={custom}
+                    onChange={(event) => {
+                      setCustom(event.target.value);
+                      setUsingCustom(true);
+                    }}
+                    onFocus={() => setUsingCustom(true)}
+                    className="ml-2 w-full bg-transparent text-cream outline-none placeholder:text-cream/40"
+                  />
+                </div>
               </label>
+            </fieldset>
 
-              {status === "error" ? (
-                <p className="mt-4 text-sm text-gold-bright" role="alert">
-                  {message}
-                </p>
-              ) : null}
+            <a
+              href={VENMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-brand text-[1rem] font-semibold text-white shadow-brand transition hover:bg-brand-dark"
+            >
+              {selected > 0
+                ? `Donate $${selected.toLocaleString("en-US")} on Venmo`
+                : "Donate on Venmo"}
+            </a>
 
-              <button
-                type="submit"
-                disabled={status === "submitting" || selected < 1}
-                className="mt-6 h-12 w-full rounded-full bg-brand text-[1rem] font-semibold text-white shadow-brand transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60"
+            <p className="mt-4 text-center text-sm text-cream/70">
+              Venmo:{" "}
+              <a
+                href={VENMO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-gold-bright underline decoration-brand/60 underline-offset-4 hover:text-brand"
               >
-                {status === "submitting"
-                  ? "Sending pledge…"
-                  : `Pledge $${selected > 0 ? selected.toLocaleString("en-US") : "-"}`}
-              </button>
-              <p className="mt-3 text-center text-xs leading-relaxed text-cream/50">
-                Global Shapers LA is a hub of the World Economic Forum Global
-                Shapers Community. Payment processing will be completed on a
-                secure follow-up link.
-              </p>
-            </form>
-          )}
+                {VENMO_HANDLE}
+              </a>
+            </p>
+            <p className="mt-3 text-center text-xs leading-relaxed text-cream/50">
+              Global Shapers LA is a hub of the World Economic Forum Global
+              Shapers Community. Opens{" "}
+              <span className="whitespace-nowrap">venmo.com/u/wefgsla</span>.
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>

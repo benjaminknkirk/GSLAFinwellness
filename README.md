@@ -27,7 +27,7 @@ npm run build
 
 ## Campaign notes
 
-The donate section records a **pledge** through `POST /api/pledge`. Wire a payment processor (Stripe, Givebutter, or the hub’s existing donation path) before taking live gifts. The form currently confirms intent and asks the donor to wait for a secure payment link.
+Donations go through Venmo at [venmo.com/u/wefgsla](https://www.venmo.com/u/wefgsla) (`@wefgsla`). The donate section and footer link there; amount chips are suggested impact levels only.
 
 Copy cites:
 
