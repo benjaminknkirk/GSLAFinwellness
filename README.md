@@ -27,7 +27,7 @@ npm run build
 
 ## Campaign notes
 
-Donations go through Venmo at [venmo.com/u/wefgsla](https://www.venmo.com/u/wefgsla) (`@wefgsla`). The donate section and footer link there; amount chips are suggested impact levels only.
+Donations go through Venmo at [venmo.com/u/wefgsla](https://www.venmo.com/u/wefgsla) (`@wefgsla`). The donate section and footer link there.
 
 Copy cites:
 

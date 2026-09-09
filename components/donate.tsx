@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { VENMO_HANDLE, VENMO_URL } from "@/lib/donate";
 import { FadeIn } from "./fade-in";
 
@@ -13,14 +13,6 @@ export function Donate() {
 
   const selected = usingCustom ? Number(custom) || 0 : amount;
 
-  const impactLine = useMemo(() => {
-    if (selected >= 400) return "Funds a bilingual Saturday clinic.";
-    if (selected >= 150) return "Funds a neighborhood workshop.";
-    if (selected >= 75) return "Funds a coaching hour for one household.";
-    if (selected >= 25) return "Funds a workshop kit for a participant.";
-    return "Every dollar moves someone closer to a first session.";
-  }, [selected]);
-
   return (
     <section id="donate" className="bg-navy px-5 py-24 text-cream sm:px-8 sm:py-32">
       <div className="mx-auto grid max-w-page gap-12 lg:grid-cols-12 lg:gap-16">
@@ -29,11 +21,11 @@ export function Donate() {
             Donate
           </p>
           <h2 className="mt-3 font-display text-display-lg font-semibold text-balance">
-            Put a workshop in someone&apos;s week.
+            Help fund the work.
           </h2>
           <p className="mt-6 text-lead text-cream/76 text-pretty">
-            Give through Venmo to Global Shapers LA. Pick an amount below for a
-            sense of impact, then complete your gift at{" "}
+            Give through Venmo to Global Shapers LA. Your gift supports the
+            Financial Wellness Initiative. Complete it at{" "}
             <a
               className="font-semibold text-gold-bright underline decoration-brand/70 underline-offset-4 hover:text-brand"
               href={VENMO_URL}
@@ -43,9 +35,6 @@ export function Donate() {
               {VENMO_HANDLE}
             </a>
             .
-          </p>
-          <p className="mt-8 font-display text-2xl italic text-gold-bright">
-            {impactLine}
           </p>
         </FadeIn>
 
